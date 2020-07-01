@@ -1,38 +1,162 @@
+@charset "UTF-8";
+@font-face {
+  font-family: "CenturyGothic";
+  src: url("assets/fuentes/CenturyGothic.ttf");
+}
 .App {
-  text-align: center;
+  font-family: "CenturyGothic";
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
+/* Estilos de la cabecera */
 .App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+  background: #ecf0f1;
+  padding-bottom: 4px;
+  padding-left: 30px;
+  color: #1e272e;
+  width: 100%;
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
+  height: 10vh;
+}
+.App-header .titulo {
+  padding-top: 10px;
+  font-size: 50px;
+  font-weight: bold;
+  color: #A004A8;
+}
+.App-header a {
+  text-decoration: none;
+}
+
+/* Menú */
+.menu {
+  padding-top: 5px;
+  z-index: 100;
+  position: absolute;
+  background: #ecf0f1;
+  padding-right: 40px;
+  padding-left: 20px;
+  padding-bottom: 40px;
+  margin-left: 3.8%;
+  transition: 400ms;
+  height: 90.3vh;
+}
+
+.oculto {
+  width: 210.16px;
+  z-index: 100;
+  position: absolute;
+  background: #ecf0f1;
+  padding-right: 40px;
+  padding-left: 20px;
+  margin-left: 3.8%;
+  height: 90.3vh;
+  transition: 400ms;
+  height: 0;
+  font-size: 0;
+}
+
+.oculto2 {
+  height: 0;
+  font-size: 0;
+}
+
+.item-menu {
+  transition: 500ms;
+}
+
+.content-menu {
+  margin-top: 5vh;
+  z-index: 100;
+  position: absolute;
+  width: 90%;
+  display: flex;
+  justify-content: flex-end;
+  transition: 400ms;
+}
+
+/* parte intro */
+.intro {
+  width: 100%;
+  height: 90vh;
+  background-image: url("assets/gif.gif");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.intro .mensaje {
+  color: white;
+  text-align: center;
+  font-weight: bold;
+  text-shadow: 1px 1px #1e272e;
+}
+
+/* Contenido */
+.fila {
+  display: flex;
+  flex-direction: row;
+  overflow: hidden;
+  background: #ecf0f1;
+}
+
+.link {
+  margin: 0;
+  width: 50%;
+  height: 50vh;
+  transition: 600ms;
+}
+.link a {
+  text-decoration: none;
+  color: #ecf0f1;
+  width: 100%;
+  height: 50vh;
+  display: flex;
+  text-align: center;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  font-size: 0;
+  transition: 600ms;
+  font-weight: bold;
+  cursor: pointer;
+  text-shadow: 1px 1px #1e272e;
+}
+.link a:hover {
+  font-size: 40px;
+  color: #ecf0f1;
+  background: rgba(255, 255, 255, 0.2);
 }
 
-.App-link {
-  color: #61dafb;
+.jhin1 {
+  background-image: url("assets/img/jhin.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.jhin2 {
+  background-image: url("assets/img/jhin1.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
 }
+
+.jhin3 {
+  background-image: url("assets/img/jhin2.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.jhin4 {
+  background-image: url("assets/img/jhin3.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+/*# sourceMappingURL=App.css.map */
