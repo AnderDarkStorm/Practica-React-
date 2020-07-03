@@ -2,13 +2,19 @@ import React, { Component } from 'react';
 import './header.css';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
+import {
+    BrowserRouter,
+    Link,
+    NavLink
+  } from "react-router-dom";
+import music from '../../assets/music.mp3';
 
 export default class Header extends Component{
     
     newClass(){
 
         var menu1 = document.getElementById("menu1");
-        var menu2 = document.getElementById("menu2");
+        
         var menu3 = document.getElementById("menu3");
         var menu4 = document.getElementById("menu4");
         var menu5 = document.getElementById("menu5");
@@ -17,35 +23,36 @@ export default class Header extends Component{
 
         icono.classList.toggle('open');
 
-        
-
-        if(menu1.classList.item(0) == 'oculto'){
+        if(menu1.classList.item(0) === 'oculto'){
             menu1.classList.remove("oculto"); 
             menu1.classList.toggle("menu");
 
-            menu2.classList.remove("oculto2"); 
             menu3.classList.remove("oculto2"); 
             menu4.classList.remove("oculto2"); 
             menu5.classList.remove("oculto2"); 
             menu6.classList.remove("oculto2"); 
 
-            
-        
+            menu3.classList.toggle("item-menu"); 
+            menu4.classList.toggle("item-menu"); 
+            menu5.classList.toggle("item-menu"); 
+            menu6.classList.toggle("item-menu"); 
+
         }else{
             menu1.classList.remove("menu"); 
             menu1.classList.toggle("oculto");
-            
-            menu2.classList.toggle("oculto2"); 
+        
+            menu3.classList.remove("item-menu"); 
+            menu4.classList.remove("item-menu"); 
+            menu5.classList.remove("item-menu"); 
+            menu6.classList.remove("item-menu"); 
+
             menu3.classList.toggle("oculto2"); 
             menu4.classList.toggle("oculto2"); 
             menu5.classList.toggle("oculto2"); 
             menu6.classList.toggle("oculto2"); 
-
-       
+           
         }
-   
     }
-
 
     render(){   
         AOS.init();
@@ -55,9 +62,10 @@ export default class Header extends Component{
 
         <header className="App-header">
             
-            <a href="/"><h1 class="titulo" >Khada Jhin</h1></a>
-            
-        
+            <Link to="/"><h1 class="titulo" >Khada Jhin</h1></Link>
+            <audio preload autoPlay loop controls >
+            <source src={music}  type="audio/mpeg" />
+            </audio>
             <div onClick={this.newClass} id="nav-icon3">
                 <span></span>
                 <span></span>
@@ -69,28 +77,25 @@ export default class Header extends Component{
                 
                 <div id="menu1" class="oculto">
 
-                    <h3 id="menu2" class="oculto2">Articles</h3>
+        
 
-                    <div>
+                    <div className="div_aux_menu">
 
-                        <h4 id="menu3" class="oculto2"><a href="/">Historia</a></h4>
-                        <h4 id="menu4" class="oculto2"><a href="/">Jugabilidad</a></h4>
-                        <h4 id="menu5" class="oculto2"><a href="/">Curiosidades</a></h4>
-                        <h4 id="menu6" class="oculto2"><a href="/">Frase</a></h4>
+                        <h4 id="menu3" class="oculto2"><NavLink activeClassName="active" to="/historia">Historia</NavLink></h4>
+                        <h4 id="menu4" class="oculto2"><NavLink activeClassName="active" to="/jugabilidad">Jugabilidad</NavLink></h4>
+                        <h4 id="menu5" class="oculto2"><NavLink activeClassName="active" to="/curiosidades">Curiosidades</NavLink></h4>
+                        <h4 id="menu6" class="oculto2"><NavLink activeClassName="active" to="/frases">Frases</NavLink></h4>
 
                     </div>
-
 
                 </div>
             </div>
 
         </header>
+        <div className="div_aux"></div>
 
-       
-    
         </React.Fragment>
             
-       
         );
 
         

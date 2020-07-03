@@ -1,19 +1,23 @@
-import React from 'react';
+import React, { Component } from 'react';
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 
 
-export default function(){
+export default class Intro extends Component{
 
+    render(){
+        AOS.init();
     return(
-        <div className="intro">
+        <div className={this.props.class_intro}>
             
-            <div data-aos="zoom-in" data-aos-duration="3000">
-            <h2  class="mensaje no_seleccion">Mi genio florece en la masacre<br/> como un Lirio al amanecer.</h2>
+            <div data-aos="zoom-in" data-aos-duration="2000">
+             <h2  class="mensaje no_seleccion">{this.props.mensaje1}<br/>{this.props.mensaje2}</h2>
             </div>
 
         </div>
         
 
     );
-
+}
 
 }

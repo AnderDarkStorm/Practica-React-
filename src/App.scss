@@ -10,8 +10,7 @@ $morado2: #8306BF;
 $azul: #4C05B5;
 $rosa: #BF0673;
 $negro: #1e272e;
-
-
+$blanco-rgb: rgba(236,240,241,0.5);
 
 @font-face{
 
@@ -21,15 +20,15 @@ $negro: #1e272e;
 
 .App{
      font-family: "CenturyGothic";
+   
 }
-
 
 /* Estilos de la cabecera */
 .App-header{
-    
+    position: fixed;
+    z-index: 100;
     background: $blanco;
     padding-bottom: 4px;
-    padding-left: 30px;
     color: $negro;
     width: 100%;
     display: flex;
@@ -43,47 +42,84 @@ $negro: #1e272e;
         font-size: 50px;
         font-weight: bold;
         color: $morado1;
-        
     }
 
     a{
         text-decoration: none;
+        color: $morado1;
+    }
+
+    audio{
+        margin-top: 4px;
     }
 }
+.div_aux{
+    width: 100%;
+    height: 10vh;
+}
+
 /* Menú */
 .menu{
-    
+    width: 24%;
     padding-top: 5px;
     z-index: 100;
     position: absolute;
-    background: $blanco;
-    padding-right: 40px;
-    padding-left: 20px;
+    background: $blanco-rgb;
+    padding-left: 25px;
     padding-bottom: 40px;
-    margin-left: 3.8%;
+    margin-left: 4%;
     transition: 400ms;
     height: 90.3vh;
+
+    .div_aux_menu{
+        margin-top: 30px;
+    }
 }
 .oculto{
-    width: 210.16px;
+    width: 24%;
     z-index: 100;
     position: absolute;
-    background: $blanco;
-    padding-right: 40px;
-    padding-left: 20px;
-    margin-left: 3.8%;
+    background: $blanco-rgb;
+    padding-left: 25px;
+    margin-left: 4%;
     height: 90.3vh;
     transition: 400ms;
     height: 0;
     font-size: 0;
 }
 .oculto2{
-
-   height: 0;
-   font-size: 0;
+    transition: 400ms;
+    height: 0;
+    width: 0;
+    font-size: 0px;
+    a{
+        width: 0;
+        padding: 0;
+        background: 0;
+    }
+    
+}
+.active{
+    padding: 4px;
+    border-radius: 4px;
+    background: $morado2 !important;
+    color: $blanco !important;
+    
 }
 .item-menu{
-    transition: 500ms;
+    
+    margin-bottom: 30px;
+    
+    a{
+        padding: 4px;
+        border-radius: 4px;
+        background: $blanco;
+        transition: 400ms;
+        &:hover{
+            background: $morado2;
+            color: white;
+        }
+    }
 }
 
 .content-menu{
@@ -94,11 +130,13 @@ $negro: #1e272e;
     display: flex;
     justify-content: flex-end;
     transition: 400ms;
+    margin-left: 30px;
     
 }
 
 /* parte intro */
 .intro{
+  
     width: 100%;
     height: 90vh;
     background-image: url("assets/gif.gif");
@@ -118,7 +156,90 @@ $negro: #1e272e;
     }
 }
 
+.intro_historia{
 
+    background-image: url("assets/img/jhin.jpg");
+    width: 100%;
+    height: 90vh;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .mensaje{
+        color: white;
+        text-align: center;
+        font-weight: bold;
+        text-shadow: 1px 1px  $negro;
+    }
+}
+
+.intro_jugabilidad{
+    background-image: url("assets/img/jhin1.jpg");
+    width: 100%;
+    height: 90vh;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .mensaje{
+        color: white;
+        text-align: center;
+        font-weight: bold;
+        text-shadow: 1px 1px  $negro;
+    }
+}
+
+.intro_curiosidades{
+
+    background-image: url("assets/img/jhin2.jpg");
+    width: 100%;
+    height: 90vh;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .mensaje{
+        color: white;
+        text-align: center;
+        font-weight: bold;
+        text-shadow: 1px 1px  $negro;
+    }
+
+}
+
+.intro_frases{
+
+    background-image: url("assets/img/jhin3.jpg");
+    width: 100%;
+    height: 90vh;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .mensaje{
+        color: white;
+        text-align: center;
+        font-weight: bold;
+        text-shadow: 1px 1px  $negro;
+    }
+
+}
 
 /* Contenido */
 .fila{
@@ -132,21 +253,20 @@ $negro: #1e272e;
     
     margin: 0;
     width: 50%;
-    height: 50vh;
+    height: 45vh;
     transition: 600ms;
 
-
-    a{
+    .router-styles{
         text-decoration: none;
         color: $blanco;
         width: 100%;
-        height: 50vh;
+        height: 45vh;
         display: flex;
         text-align: center;
         align-items: center;
         justify-content: center;
         font-size: 0;
-        transition: 600ms;
+        transition: 1000ms;
         font-weight: bold;
         cursor: pointer;
         text-shadow: 1px 1px  $negro;
@@ -154,10 +274,9 @@ $negro: #1e272e;
         &:hover{
             font-size: 40px;
             color: $blanco;
-            background: rgba(255, 255, 255, 0.2);
+            background: rgba(255, 255, 255, 0.3);
         }
     }
-
 
 }
 
@@ -166,33 +285,240 @@ $negro: #1e272e;
     background-image: url("assets/img/jhin.jpg");
     background-size: cover;
     background-repeat: no-repeat;
-    background-position: center;
+    background-position: top;
 }
-
 
 .jhin2{
 
     background-image: url("assets/img/jhin1.jpg");
     background-size: cover;
     background-repeat: no-repeat;
-    background-position: center;
+    background-position: top;
 }
-
 
 .jhin3{
 
     background-image: url("assets/img/jhin2.jpg");
     background-size: cover;
     background-repeat: no-repeat;
-    background-position: center;
+    background-position: top;
 }
-
 
 .jhin4{
 
     background-image: url("assets/img/jhin3.jpg");
     background-size: cover;
     background-repeat: no-repeat;
-    background-position: center;
+    background-position: top;
 }
+
+/* Historia */
+
+.historia_texto{
+
+    width: 100%;
+    padding: 100px;
+    padding-top: 40px;
+    background: $blanco;
+    h2{
+        margin-bottom: 20px;
+        text-align: center;
+    }
+
+    p{
+        text-align: justify;
+        font-family: sans-serif;
+        width: 100%;
+    }
+   
+}
+
+/* Jugabilidad */
+.resumen{
+    padding: 50px;
+    padding-bottom: 30px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+
+    h3{
+        margin: 10px;
+    }
+
+    div{
+        display: flex;
+        flex-direction: row;
+    }
+
+  
+}
+.dificultad{
+    width: 40px;
+    height: 16px;
+    background: $morado2;
+    transform: skew(-40deg);
+    margin: 10px;
+    margin-top: 20px;
+   
+}
+
+.dificultad0{
+    width: 40px;
+    height: 16px;
+    background: #4444;
+    transform: skew(-40deg);
+    margin: 10px;
+    margin-top: 20px;
+}
+
+
+.habilidades{
+    height: 100vh;
+
+    h2{
+        font-weight: bold;
+        text-align: center;
+        margin: 40px;
+        margin-top:20px;
+        margin-bottom: 20px;
+        
+    }
+}
+.habs_img{
+    padding: 50px;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    padding-bottom: 0;
+    padding-top: 0;
+    height: 110px;
+
+    div{
+        width: 20%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+    }
+
+    .jhin_hab{
+        cursor: pointer;
+        border-radius: 10px;
+        height: 100px;
+        transition: 400ms;
+        &:hover{
+            width: 110px;
+            height: 110px;
+        }
+
+        
+    }
+
+}
+p{
+    text-align: justify;
+    width: 570px;
+    font-family: sans-serif;
+    
+}
+.hab_mostrar{
+
+    width: 100%;
+    padding: 50px;
+    display: flex !important;
+    flex-direction: column;
+    transition: 400ms;
+    padding-top: 20px;
+
+    h2{
+        text-align: center;
+        font-size: 20px;
+        padding-bottom: 20px;
+        font-weight: bold;
+    }
+
+    div{
+        width: 100%;
+      
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+       
+    
+        p{
+            
+            margin-right: 30px;
+            font-size: 16px;
+        }
+
+    }
+}
+.hab_oculto{
+   
+   height: 0;
+   font-size: 0;
+   
+
+   h2{
+        display: none;
+       height: 0;
+       font-size: 0;
+   }
+   video{
+    
+       height: 0;
+   }
+}
+
+/*curiosidades*/
+.curiosidades{
+
+    background: $blanco;
+    
+}
+
+.curiosidades_content{
+    
+    background: $blanco;
+    margin-top: 60px;
+
+    padding: 20px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    p{
+       
+        text-align: justify;
+        font-size: 18px;
+        margin-bottom: 20px;
+    }
+    padding-bottom: 100px;
+}
+
+/* Frases */
+.contenedor_audio{
+    height: 100vh;
+    padding: 30px;
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    justify-content: space-around;
+
+    div{
+        display: flex;
+        flex-direction: column;
+        width: 50%;
+        justify-content: center;
+        align-items: center;
+    }
+
+    audio{
+        margin: 40px;
+        text-decoration: none;
+    
+    }
+}
+
 
